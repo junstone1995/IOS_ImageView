@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XyV-H9-oGS">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,6 +8,76 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Split View Controller-->
+        <scene sceneID="jbf-Xd-kpj">
+            <objects>
+                <splitViewController id="XyV-H9-oGS" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="bf0-Ju-EEj" kind="relationship" relationship="masterViewController" id="f4G-1n-xsw"/>
+                        <segue destination="Sbu-al-ous" kind="relationship" relationship="detailViewController" id="jFb-ec-1cQ"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huk-df-iI7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1967" y="-213"/>
+        </scene>
+        <!--Cassini-->
+        <scene sceneID="iEq-dT-ab0">
+            <objects>
+                <viewController id="nlK-uX-u0w" customClass="CassiniViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CMy-hr-fgC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="VDb-2n-sg9">
+                                <rect key="frame" x="125" y="214.5" width="125" height="238"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEO-0J-cYx">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Cnh-rg-fU0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Earth"/>
+                                        <connections>
+                                            <segue destination="Sbu-al-ous" kind="showDetail" identifier="Show Image" id="Alj-rr-asJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFk-6C-cRI">
+                                        <rect key="frame" x="0.0" y="89" width="125" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Cassini"/>
+                                        <connections>
+                                            <segue destination="Sbu-al-ous" kind="showDetail" identifier="Show Image" id="zfV-b1-gEd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jiw-4U-5PI">
+                                        <rect key="frame" x="0.0" y="178" width="125" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Saturn"/>
+                                        <connections>
+                                            <segue destination="Sbu-al-ous" kind="showDetail" identifier="Show Image" id="psZ-QM-bBr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aFk-6C-cRI" firstAttribute="centerY" secondItem="VDb-2n-sg9" secondAttribute="centerY" id="QyP-Vo-ZaQ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="p9h-ki-bTD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VDb-2n-sg9" firstAttribute="centerX" secondItem="CMy-hr-fgC" secondAttribute="centerX" id="BeQ-Mb-1Qf"/>
+                            <constraint firstItem="VDb-2n-sg9" firstAttribute="centerY" secondItem="CMy-hr-fgC" secondAttribute="centerY" id="psd-gf-SR5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cassini" id="DGz-Sk-XQ7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pnp-cL-iaG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-0.80000000000000004" y="-553.67316341829087"/>
+        </scene>
         <!--Image View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -31,15 +101,55 @@
                             <constraint firstItem="9aX-7M-P54" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xpM-yK-2F8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8ZX-pd-C5Q"/>
                     <connections>
                         <outlet property="scrollView" destination="9aX-7M-P54" id="G3y-Fm-sXa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="93.103448275862078"/>
+            <point key="canvasLocation" x="936.79999999999995" y="188.45577211394306"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TU8-CF-DCo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bf0-Ju-EEj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p9l-76-xCR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nlK-uX-u0w" kind="relationship" relationship="rootViewController" id="Xp4-Oj-iF2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lPM-kI-jS7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-940" y="-553.67316341829087"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z1G-A5-QgO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sbu-al-ous" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ewl-Nw-nZE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NVd-v7-972"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C6m-Zi-KiL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.3999999999999999" y="188.45577211394306"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jFb-ec-1cQ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
