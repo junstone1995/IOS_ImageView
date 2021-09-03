@@ -91,12 +91,17 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="6Bq-Qf-H73"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="ZbI-Dl-7TM"/>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="r06-21-mAA">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9aX-7M-P54" secondAttribute="trailing" id="29d-S7-H3f"/>
+                            <constraint firstItem="r06-21-mAA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="GTV-G4-Bky"/>
                             <constraint firstItem="9aX-7M-P54" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TTl-O1-8qf"/>
+                            <constraint firstItem="r06-21-mAA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="a7e-eh-fDF"/>
                             <constraint firstItem="9aX-7M-P54" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eqV-Wv-b3a"/>
                             <constraint firstItem="9aX-7M-P54" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xpM-yK-2F8"/>
                         </constraints>
@@ -104,6 +109,7 @@
                     <navigationItem key="navigationItem" id="8ZX-pd-C5Q"/>
                     <connections>
                         <outlet property="scrollView" destination="9aX-7M-P54" id="G3y-Fm-sXa"/>
+                        <outlet property="spinner" destination="r06-21-mAA" id="Vr3-2G-xlt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
